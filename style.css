@@ -18,12 +18,30 @@ body {
 
 .nav-bar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  padding: 40px;
+  padding: 30px 88px;
 }
-.nav-bar img{
+
+.hd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  padding-top: 50px;
+}
+
+.hd h2 {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+
+.nav-bar img {
   cursor: pointer;
+}
+
+.mobile{
+  display: none;
 }
 
 ul {
@@ -44,34 +62,8 @@ ul a:hover {
   color: black;
 }
 
-.harm{
-  display: none;
-}
-.harm button{
-  border: none;
-  /* padding: 5px 0px; */
-  background-color: black;
-}
-
-
-
-
 .brand {
   width: 250px;
-}
-
-.hd h2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  font-size: 40px;
-}
-.arrow {
-  display: flex;
-  justify-content: center;
-  padding-top: 120px;
 }
 
 .two-a,
@@ -202,8 +194,6 @@ h1 {
   padding-top: 200px;
 }
 
-
-
 .etj {
   display: flex;
   flex-direction: row;
@@ -212,14 +202,11 @@ h1 {
   width: 100%;
 }
 
-
-
 .etj img {
   border-radius: 150px;
   height: 70px;
   width: 70px;
 }
-
 
 .cl {
   display: flex;
@@ -229,12 +216,12 @@ h1 {
   height: 100%;
   max-width: 100%;
   gap: 10px;
-  padding: 30px
+  padding: 30px;
 }
 
-
-
-.Emily, .jennifer, .thomas{
+.Emily,
+.jennifer,
+.thomas {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -243,12 +230,12 @@ h1 {
   padding: 20px;
 }
 
-
-.test, .word{
+.test,
+.word {
   opacity: 0.5;
 }
 
-.object{
+.object {
   width: 74.9%;
   opacity: 0.5;
 }
@@ -257,7 +244,6 @@ h1 {
   display: flex;
   flex-direction: row;
 }
-
 
 .caloris1 {
   background-image: url(../images/desktop/image-gallery-milkbottles.jpg);
@@ -330,36 +316,74 @@ h1 {
 
 @media screen and (max-width: 760px) {
   .nav-bar {
-    display: flex;
-    flex-direction: column;
+    padding: 18px 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .navi {
+    display: none;
   }
 
   .blue {
     background-image: url(./images/mobile/image-header.jpg);
-    height: 100%;
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
 
-  ul {
-    display: none;
-  }
-
-  .harm{
+  .harmbuger {
     display: block;
-    float: right;
-    position: relative;
-    bottom: 4rem;
-    right: 3rem;
   }
 
-  .arrow {
-    padding-bottom: 120px;
+  .harmbuger.active .bar:nth-child(2) {
+    opacity: 0;
   }
-  .hd{
-    position: relative;
-    top: 3rem;
+  .harmbuger.active .bar:nth-child(1) {
+    transform: translate(5px) rotate(45deg);
+  }
+  .harmbuger.active .bar:nth-child(3) {
+    transform: translateY(-16px) rotate(-45deg);
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+  .nav-menu {
+    position: fixed;
+    right: -100%;
+    top: 70px;
+    gap: 10px;
+    flex-direction: column;
+    background-color: #3dbfff;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    transition: 0.3s;
+    color: #fff;
+  }
+
+  .bar {
+    display: flex;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+  }
+
+  
+  
+  .hd {
+    gap: 50px;
+    padding-top: 200px;
   }
 
   .two {
@@ -424,51 +448,45 @@ h1 {
     display: flex;
     width: 100%;
   }
-  .two-ab{
+  .two-ab {
     display: flex;
-  flex-direction: column;
-  gap: 20px;
-  text-align: center;
-  line-height: 20px;
-  padding-top: 200px;
-  width: 80%;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    line-height: 20px;
+    padding-top: 200px;
+    width: 80%;
   }
-
-
 
   .etj {
     flex-direction: column;
     line-height: 20px;
     width: 100%;
   }
-  
-  
-  
+
   .cl {
     gap: 5px;
-    padding: 20px
+    padding: 20px;
   }
-  
-  
-  
-  .Emily, .jennifer, .thomas{
+
+  .Emily,
+  .jennifer,
+  .thomas {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 100%;
     align-items: center;
   }
-  
-  
-  
-  .object{
+
+  .object {
     width: 86.7%;
     opacity: 0.5;
   }
-  .emma{
+  .emma {
     padding-top: 0px;
   }
-  
+
   .color {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -490,7 +508,7 @@ h1 {
     width: 100%;
   }
 
-  .nav-footer ul{
+  .nav-footer ul {
     display: flex;
   }
 }
